@@ -1,0 +1,17 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/netfx/2007/xaml/presentation"
+        xmlns:controls="clr-namespace:Client"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Client"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="Bookmaker" Height="581.902" Width="1000"
+        MinHeight="590"
+        MinWidth="1010">
+
+
+    <Grid Background="#FF2C2C2C">
+        <controls:TopMenu />
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Bookmaker Project" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" FontStyle="Italic" Foreground="Aqua" Margin="469,37,0,0"/>
+        <controls:InputDataGrid x:Name="contentGrid" Margin="10,118,10,10" />
+    </Grid>
+</Window>

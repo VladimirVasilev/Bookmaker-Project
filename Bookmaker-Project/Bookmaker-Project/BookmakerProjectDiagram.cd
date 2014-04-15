@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BookmakerProject.Basketball">
+    <Position X="4.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Basketball.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookmakerProject.Calculator&lt;T&gt;" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEAAAAAAAAAAAAAAAAAUgAAAAQAAAAAEAAAAACQAAA=</HashCode>
+      <FileName>Calculator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookmakerProject.Football">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Football.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookmakerProject.Game">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgKAAAAAgAAAAAAEAAAABAIAAAACAAAAAAAAAAI=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookmakerProject.GameFactory" Collapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookmakerProject.Handball">
+    <Position X="12.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Handball.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookmakerProject.Match" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhAAA=</HashCode>
+      <FileName>Match.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookmakerProject.Tennis">
+    <Position X="6.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tennis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookmakerProject.Volleyball">
+    <Position X="10.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Volleyball.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookmakerProject.IO.ProgressReportEventArgs" Collapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAA=</HashCode>
+      <FileName>IO\ProgressReportEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookmakerProject.IO.ReadWriteFile" Collapsed="true">
+    <Position X="15.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAACAAgCAABAAAAAAAAABAAAAAAAAAQ=</HashCode>
+      <FileName>IO\ReadWriteFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="BookmakerProject.Countries" Collapsed="true">
+    <Position X="14" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhAwJKCRIAoAgEAAAAUAwkQoAAAiBXBGAQAEqAEA0RI=</HashCode>
+      <FileName>Countries.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BookmakerProject.GameType" Collapsed="true">
+    <Position X="15.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAQAAAAAAA=</HashCode>
+      <FileName>GameType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

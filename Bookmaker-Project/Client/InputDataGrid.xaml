@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="Client.InputDataGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:Client"
+             xmlns:bmProject="clr-namespace:BookmakerProject;assembly=Bookmaker-Project"
+             mc:Ignorable="d" 
+             d:DesignHeight="263" d:DesignWidth="964">
+
+    <UserControl.Resources>
+        <!--Create list of enumeration values-->
+        <ObjectDataProvider x:Key="CountriesEnum" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type Type="bmProject:Countries"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <!--Create list of enumeration values-->
+        <ObjectDataProvider x:Key="GameTypeEnum" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type Type="bmProject:GameType"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <DataTemplate x:Key="ColButton">
+            <Button Click="Remove_Click" Content="Изтрий">
+            </Button>
+        </DataTemplate>
+
+    </UserControl.Resources>
+
+    <Grid>
+        <DataGrid Name="dataGrid" ItemsSource="{Binding Path=local:Matches, UpdateSourceTrigger=Explicit,NotifyOnTargetUpdated=True}" AutoGenerateColumns="False" Margin="0,0,0,118" Width="925" BorderBrush="Black" Background="#4CFFFFFF" IsSynchronizedWithCurrentItem="True" ScrollViewer.VerticalScrollBarVisibility="Visible">
+
+            <DataGrid.Resources>
+
+                <DataTemplate x:Key="DateTemplate" >
+                    <StackPanel Orientation="Horizontal">
+                        <DatePicker Background="#4CFFFFFF" SelectedDate="{Binding DateAndTime}" DisplayDateStart="{x:Static sys:DateTime.Now}" IsEnabled="False" />
+                        <TextBox Text="{Binding DateAndTime.Hour, Mode=OneWay}" TextChanged="Hour_TextChanged" Width="30" ></TextBox>
+                        <Label>:</Label>
+                        <TextBox Text="{Binding DateAndTime.Minute, Mode=OneWay}" TextChanged="Minute_TextChanged" Width="30" ></TextBox>
+                    </StackPanel>
+                </DataTemplate>
+
+
+                <DataTemplate x:Key="EditingDateTemplate">
+                    <DatePicker Background="#4CFFFFFF" SelectedDate="{Binding DateAndTime}" DisplayDateStart="{x:Static sys:DateTime.Now}"  />
+                </DataTemplate>
+
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Дата" CellTemplate="{StaticResource DateTemplate}" CellEditingTemplate="{StaticResource EditingDateTemplate}" Width="180" />
+                <DataGridTextColumn Header="Спорт" Binding="{Binding SportName, Mode=OneWay}" Width="120"/>
+                <DataGridComboBoxColumn Header="Държава"  SelectedItemBinding="{Binding Country}"  ItemsSource="{Binding Source={StaticResource CountriesEnum}}" Width="150"/>
+                <DataGridTextColumn Header="Домакин" Width="150"  Binding="{Binding Match.HomeTeam}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Гост" Width="150" Binding="{Binding Match.AwayTeam}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Коефициент" Binding="{Binding Coef}" Width="100" />
+                <DataGridTemplateColumn CellTemplate="{StaticResource ColButton}"></DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <Button Content="Добавяне на среща" HorizontalAlignment="Center" Height="28" Margin="20,0,802,27" Width="142" Click="GetInputData_Click" VerticalAlignment="Bottom"></Button>
+        <ComboBox  HorizontalAlignment="Center" Height="28" Margin="20,0,842,69" VerticalAlignment="Bottom" Width="102" x:Name="nextGameType" SelectedIndex="0">
+            <ComboBoxItem>Football</ComboBoxItem>
+            <ComboBoxItem>Basketball</ComboBoxItem>
+            <ComboBoxItem>Volleyball</ComboBoxItem>
+            <ComboBoxItem>Tennis</ComboBoxItem>
+            <ComboBoxItem>Handball</ComboBoxItem>     
+            
+        </ComboBox>
+
+
+        <Button Content="Изчисли права колконка" HorizontalAlignment="Center" Margin="228,0,586,69" VerticalAlignment="Bottom" Width="150" Height="28" RenderTransformOrigin="0.613,0.679" Click="Button_Click"/>
+        <Button Content="Изчисли система" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Margin="228,0,586,27" Height="28" Click="Button_Click_1"/>
+
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="814,0,110,73" TextWrapping="Wrap" Text="Залог:" FontSize="14" FontStyle="Italic" Foreground="Aqua" Height="20" Width="40" RenderTransformOrigin="0.3,0.3"/>
+        <TextBox Name="BetText" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="859,0,45,74" Height="20" Width="60" Text="0.10" RenderTransformOrigin="0.12,0.6" TextAlignment="Right"></TextBox>
+        <TextBox Name="Combinations" Height="20" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="90" Margin="427,0,447,27" TextAlignment="Right" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.567,0.5"/>
+        <CheckBox Name="AllCombinations" Content="Всички" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="540,0,362,27" Foreground="Aqua" FontSize="14" IsEnabled="False"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="924,0,20,74" TextWrapping="Wrap" Text="лв." FontSize="14" FontStyle="Italic" Foreground="Aqua" Height="20" Width="20" RenderTransformOrigin="0.3,0.3"/>
+
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="814,0,20,35" TextWrapping="Wrap" Text="МВП:" ToolTip="Максимална възможна печалба" FontSize="14" FontStyle="Italic" Foreground="Aqua" Height="20" Width="130" RenderTransformOrigin="0.3,0.3"/>
+        <TextBlock Name="ProfitText" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="850,0,44,35" Height="20" Width="70" RenderTransformOrigin="0.12,0.6" FontSize="14" FontStyle="Italic" Foreground="Aqua" TextAlignment="Right"></TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="924,0,20,35" TextWrapping="Wrap" Text="лв." FontSize="14" FontStyle="Italic" Foreground="Aqua" Height="20" Width="20" RenderTransformOrigin="0.3,0.3"/>
+
+    </Grid>
+</UserControl>
